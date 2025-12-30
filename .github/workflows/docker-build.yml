@@ -1,4 +1,4 @@
-name: Build and Push IgGM to GHCR
+name: Build and Push Thin IgGM to GHCR
 
 on:
   push:
@@ -36,6 +36,5 @@ jobs:
           context: .
           push: true
           tags: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest
-          # Cache to make subsequent builds faster
           cache-from: type=gha
           cache-to: type=gha,mode=max
