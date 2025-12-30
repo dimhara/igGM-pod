@@ -50,4 +50,6 @@ COPY entrypoint.sh /app/entrypoint.sh
 RUN chmod +x /app/entrypoint.sh
 
 # Set the entrypoint
-ENTRYPOINT ["/app/entrypoint.sh"]
+#ENTRYPOINT ["/app/entrypoint.sh"]
+# TEST FIRST --  Keep the container running
+CMD ["sleep", "infinity"]
