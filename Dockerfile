@@ -27,7 +27,7 @@ RUN uv pip install --no-cache \
     pyg_lib torch_scatter torch_sparse torch_cluster torch_spline_conv \
     -f https://data.pyg.org/whl/torch-2.0.1+cu117.html && \
     uv pip install --no-cache \
-    https://west.rosettacommons.org/pyrosetta/release/release/PyRosetta4.Release.python310.ubuntu.wheel/pyrosetta-2025.37+release.df75a9c48e-cp310-cp310-linux_x86_64.whl && \
+    https://west.rosettacommons.org/pyrosetta/release/release/PyRosetta4.Release.python310.ubuntu.wheel/pyrosetta-2025.51+release.612b6ef9e9-cp310-cp310-linux_x86_64.whl && \
     uv pip install --no-cache \
     biopython==1.79 pandas scipy matplotlib seaborn tqdm pyyaml \
     requests ml-collections abnumber logomaker biopandas pdbfixer openmm
