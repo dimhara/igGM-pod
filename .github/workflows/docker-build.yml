@@ -1,4 +1,4 @@
-name: Build and Push IgGM to GHCR
+name: Build and Push Optimized IgGM
 
 on:
   push:
@@ -20,7 +20,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # AGGRESSIVE CLEANUP: This frees up ~30GB of space for the build process
+      # FREES UP ~30GB for the build
       - name: Free Disk Space
         run: |
           sudo rm -rf /usr/share/dotnet
@@ -28,7 +28,6 @@ jobs:
           sudo rm -rf /opt/ghc
           sudo rm -rf "/usr/local/share/boost"
           sudo rm -rf /usr/lib/jvm
-          sudo rm -rf /opt/hostedtoolcache/CodeQL
           docker image prune --all --force
 
       - name: Log in to GHCR
@@ -47,6 +46,5 @@ jobs:
           context: .
           push: true
           tags: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest
-          # RE-ADDED CACHING LOGIC
           cache-from: type=gha
           cache-to: type=gha,mode=max
